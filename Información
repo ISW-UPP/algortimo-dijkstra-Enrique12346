@@ -1,0 +1,10 @@
+El algoritmo de Dijkstra, también llamado algoritmo de caminos mínimos, es un algoritmo para la determinación del camino más corto, dado un vértice origen, hacia el resto de los vértices en un grafo que tiene pesos en cada arista. Su nombre alude a Edsger Dijkstra, científico de la computación de los Países Bajos que lo concibió en 1956 y lo publicó por primera vez en 1959.1​2​
+Teniendo un grafo dirigido ponderado de {\displaystyle N}N nodos no aislados, sea {\displaystyle x}x el nodo inicial. Un vector {\displaystyle D}D de tamaño {\displaystyle N}N guardará al final del algoritmo las distancias desde {\displaystyle x}x hasta el resto de los nodos.
+
+Inicializar todas las distancias en {\displaystyle D}D con un valor infinito relativo, ya que son desconocidas al principio, exceptuando la de {\displaystyle x}x, que se debe colocar en {\displaystyle 0}{\displaystyle 0}, debido a que la distancia de {\displaystyle x}x a {\displaystyle x}x sería {\displaystyle 0}{\displaystyle 0}.
+Sea {\displaystyle a=x}{\displaystyle a=x} (Se toma {\displaystyle a}a como nodo actual).
+Se recorren todos los nodos adyacentes de a, excepto los nodos marcados. Se les llamará nodos no marcados vi.
+Para el nodo actual, se calcula la distancia tentativa desde dicho nodo hasta sus vecinos con la siguiente fórmula: dt(vi) = Da + d(a,vi). Es decir, la distancia tentativa del nodo ‘vi’ es la distancia que actualmente tiene el nodo en el vector D más la distancia desde dicho nodo ‘a’ (el actual) hasta el nodo vi. Si la distancia tentativa es menor que la distancia almacenada en el vector, entonces se actualiza el vector con esta distancia tentativa. Es decir, si dt(vi) < Dvi → Dvi = dt(vi)
+Se marca como completo el nodo a.
+Se toma como próximo nodo actual el de menor valor en D (puede hacerse almacenando los valores en una cola de prioridad) y se regresa al paso 3, mientras existan nodos no marcados.
+Una vez terminado al algoritmo, {\displaystyle D}D estará completamente lleno.
